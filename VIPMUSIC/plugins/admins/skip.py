@@ -20,7 +20,7 @@ from VIPMUSIC.core.call import VIP
 from VIPMUSIC.misc import db
 from VIPMUSIC.utils.database import get_loop
 from VIPMUSIC.utils.decorators import AdminRightsCheck
-from VIPMUSIC.utils.inline.play import stream_markup2, telegram_markup
+from VIPMUSIC.utils.inline.play import stream_markup_timerr, telegram_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import gen_thumb
 
