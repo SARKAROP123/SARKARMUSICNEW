@@ -1,6 +1,7 @@
 import math
-from config import SUPPORT_CHAT, OWNER_USERNAME
-from pyrogram.types import InlineKeyboardButton
+
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 from VIPMUSIC.utils.formatters import time_to_seconds
 
 
