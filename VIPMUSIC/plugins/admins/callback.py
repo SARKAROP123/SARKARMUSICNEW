@@ -37,8 +37,10 @@ from VIPMUSIC.utils.inline import (
     panel_markup_3,
     panel_markup_4,
     panel_markup_5,
+    stream_markup,
     stream_markup2,
 )
+from VIPMUSIC.utils.inline.play import stream_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import get_thumb
 
@@ -74,7 +76,7 @@ async def del_back_playlists(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     videoid, chat_id = callback_request.split("|")
-    buttons = stream_markup2(_, videoid, chat_id)
+    buttons = stream_markup(_, videoid, chat_id)
     chat_id = CallbackQuery.message.chat.id
     try:
         await CallbackQuery.edit_message_reply_markup(
@@ -91,7 +93,7 @@ async def music_markup(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     videoid, chat_id = callback_request.split("|")
-    buttons = stream_markup2(_, videoid, chat_id)
+    buttons = stream_markup(_, videoid, chat_id)
     chat_id = CallbackQuery.message.chat.id
     try:
         await CallbackQuery.edit_message_reply_markup(
