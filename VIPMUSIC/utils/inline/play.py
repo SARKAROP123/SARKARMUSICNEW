@@ -540,7 +540,7 @@ def queue_markup(_, videoid, chat_id):
     return buttons
 
 
-def stream_markup2(_, chat_id):
+def stream_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
