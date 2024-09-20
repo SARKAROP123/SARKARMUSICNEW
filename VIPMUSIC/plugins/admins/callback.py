@@ -40,7 +40,7 @@ from VIPMUSIC.utils.inline import (
     stream_markup2,
     stream_markup,
 )
-from VIPMUSIC.utils.inline.play import stream_markup
+from VIPMUSIC.utils.inline.play import stream_markup2
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import get_thumb
 
