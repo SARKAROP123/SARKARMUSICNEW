@@ -24,7 +24,7 @@ from VIPMUSIC.utils.database import (
     is_video_allowed,
 )
 from VIPMUSIC.utils.exceptions import AssistantErr
-from VIPMUSIC.utils.inline.play import queue_markup, stream_markup, telegram_markup
+from VIPMUSIC.utils.inline.play import queue_markup, stream_markup_timerr, telegram_markup
 from VIPMUSIC.utils.inline.playlist import close_markup
 from VIPMUSIC.utils.pastebin import VIPbin
 from VIPMUSIC.utils.stream.queue import put_queue, put_queue_index
@@ -113,7 +113,7 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await gen_thumb(vidid)
-                button = stream_markup(_, vidid, chat_id)
+                button = stream_markup_timerr(_, vidid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
                     photo=img,
