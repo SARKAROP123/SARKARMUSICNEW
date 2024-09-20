@@ -52,7 +52,6 @@ from VIPMUSIC.utils.database import (
 )
 from VIPMUSIC.utils.exceptions import AssistantErr
 from VIPMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
-from VIPMUSIC.utils.inline.play import stream_markup, telegram_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import gen_thumb
 
