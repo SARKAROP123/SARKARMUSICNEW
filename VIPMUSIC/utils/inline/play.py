@@ -374,24 +374,24 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text="𝐏𝐥𝐚𝐲𝐋𝐢𝐬𝐭", callback_data=f"vip_playlist {videoid}"
             ),
             InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
+                text="𝐂𝐨𝐧𝐭𝐫𝐨𝐥",
                 callback_data=f"Pages Back|3|{videoid}|{chat_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
+                text="𝐕𝐢𝐝𝐞𝐨", callback_data=f"downloadvideo {videoid}"
             ),
             InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
+                text="𝐀𝐮𝐝𝐢𝐨", callback_data=f"downloadaudio {videoid}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴀᴅᴠᴀɴᴄᴇ ғᴇᴀᴛᴜʀᴇ ๏",
+                text="𝐅𝐞𝐚𝐭𝐮𝐫𝐞",
                 callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
             ),
         ],
@@ -531,7 +531,7 @@ def queue_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏",
+                text="𝐌𝐨𝐫𝐞",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
         ],
@@ -749,11 +749,11 @@ def panel_markup_3(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴍᴜᴛᴇ ๏",
+                text="𝐌𝐮𝐭𝐞",
                 callback_data=f"ADMIN Mute|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="๏ ᴜɴᴍᴜᴛᴇ ๏",
+                text="𝐔𝐧𝐦𝐮𝐭𝐞",
                 callback_data=f"ADMIN Unmute|{chat_id}",
             ),
         ],
@@ -848,15 +848,15 @@ def panel_markup_clone(_, vidid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {vidid}"
+                text="𝐕𝐢𝐝𝐞𝐨", callback_data=f"downloadvideo {vidid}"
             ),
             InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {vidid}"
+                text="𝐀𝐮𝐝𝐢𝐨", callback_data=f"downloadaudio {vidid}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ ✚", callback_data=f"vip_playlist {vidid}"
+                text="𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭", callback_data=f"vip_playlist {vidid}"
             ),
         ],
     ]
