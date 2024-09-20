@@ -37,8 +37,8 @@ from VIPMUSIC.utils.inline import (
     panel_markup_3,
     panel_markup_4,
     panel_markup_5,
-    stream_markup,
     stream_markup2,
+    stream_markup,
 )
 from VIPMUSIC.utils.inline.play import stream_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
