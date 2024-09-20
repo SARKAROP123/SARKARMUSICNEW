@@ -24,7 +24,6 @@ from VIPMUSIC.utils.database import (
     is_video_allowed,
 )
 from VIPMUSIC.utils.exceptions import AssistantErr
-from VIPMUSIC.utils.inline.play import queue_markup, stream_markup, telegram_markup
 from VIPMUSIC.utils.inline.playlist import close_markup
 from VIPMUSIC.utils.pastebin import VIPbin
 from VIPMUSIC.utils.stream.queue import put_queue, put_queue_index
