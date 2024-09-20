@@ -400,7 +400,7 @@ def stream_markup_timer2(_, videoid, chat_id):
     return buttons
 
 
-def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
+def panel_markup_1(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -422,7 +422,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     return buttons
 
 
-def livestream_markup(_, videoid, user_id, mode, channel, fplay):
+def panel_markup_2(_, videoid, user_id, mode, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -446,7 +446,7 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     return buttons
 
 
-def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
+def livestream_markup(_, videoid, user_id, query, query_type, channel, fplay):
     query = f"{query[:20]}"
     buttons = [
         [
@@ -690,7 +690,7 @@ def panel_markup_2(_, videoid, chat_id):
     return buttons
 
 
-def panel_markup_5(_, videoid, chat_id):
+def playlist_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -725,7 +725,7 @@ def panel_markup_5(_, videoid, chat_id):
     return buttons
 
 
-def panel_markup_3(_, videoid, chat_id):
+def livestream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
