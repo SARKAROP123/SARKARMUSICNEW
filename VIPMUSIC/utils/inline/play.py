@@ -364,41 +364,6 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     return buttons
 
 
-def stream_markup(_, videoid, chat_id):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
-                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴀᴅᴠᴀɴᴄᴇ ғᴇᴀᴛᴜʀᴇ ๏",
-                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
-            ),
-        ],
-    ]
-
-    return buttons
-
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
