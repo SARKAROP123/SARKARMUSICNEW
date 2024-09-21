@@ -374,24 +374,27 @@ def stream_markup_timer2(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="Owner", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll"
+                text=_["Owner"],
+                url=f"https://t.me/ll_SARKAR_MERA_BABU_ll",
             ),
             InlineKeyboardButton(
-                text="Promotion",
+                text=_["Promotion"],
                 url=f"https://t.me/TG_NAME_STYLE/4602",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="Name", callback_data=f"https://t.me/TG_NAME_STYLE"
+                text=_["Name"],
+                url=f"https://t.me/TG_NAME_STYLE",
             ),
             InlineKeyboardButton(
-                text="Support", url=f"https://t.me/+GgLWqs5NYhowMWU1"
+                text=_["Support"],
+                url=f"https://t.me/+GgLWqs5NYhowMWU1",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="Bots",
+                text=_["Bots"],
                 url=f"https://t.me/TG_NAME_STYLE/4619",
             ),
         ],
