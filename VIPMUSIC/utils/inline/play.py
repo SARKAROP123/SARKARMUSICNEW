@@ -364,7 +364,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     return buttons
 
 
-def stream_markup_timer2(_, videoid, chat_id):
+def stream_markup(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -374,28 +374,25 @@ def stream_markup_timer2(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text=_["Owner"],
-                url=f"https://t.me/ll_SARKAR_MERA_BABU_ll",
+                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
             ),
             InlineKeyboardButton(
-                text=_["Promotion"],
-                url=f"https://t.me/TG_NAME_STYLE/4602",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["Name"],
-                url=f"https://t.me/TG_NAME_STYLE",
-            ),
-            InlineKeyboardButton(
-                text=_["Support"],
-                url=f"https://t.me/+GgLWqs5NYhowMWU1",
+                text="ᴄᴏɴᴛʀᴏʟs ♻",
+                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=_["Bots"],
-                url=f"https://t.me/TG_NAME_STYLE/4619",
+                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
+            ),
+            InlineKeyboardButton(
+                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="๏ ᴀᴅᴠᴀɴᴄᴇ ғᴇᴀᴛᴜʀᴇ ๏",
+                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
             ),
         ],
     ]
@@ -403,7 +400,7 @@ def stream_markup_timer2(_, videoid, chat_id):
     return buttons
 
 
-def panel_markup_1(_, videoid, user_id, ptype, channel, fplay):
+def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -425,7 +422,7 @@ def panel_markup_1(_, videoid, user_id, ptype, channel, fplay):
     return buttons
 
 
-def panel_markup_2(_, videoid, user_id, mode, channel, fplay):
+def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
@@ -449,7 +446,7 @@ def panel_markup_2(_, videoid, user_id, mode, channel, fplay):
     return buttons
 
 
-def livestream_markup(_, videoid, user_id, query, query_type, channel, fplay):
+def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
     query = f"{query[:20]}"
     buttons = [
         [
@@ -534,7 +531,7 @@ def queue_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐌𝐨𝐫𝐞",
+                text="๏ ᴍᴏʀᴇ ๏",
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
         ],
@@ -543,7 +540,7 @@ def queue_markup(_, videoid, chat_id):
     return buttons
 
 
-def stream_markup(_, chat_id):
+def stream_markup2(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -565,7 +562,7 @@ def stream_markup(_, chat_id):
     return buttons
 
 
-def stream_markup(_, chat_id, played, dur):
+def stream_markup_timer2(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
@@ -693,7 +690,7 @@ def panel_markup_2(_, videoid, chat_id):
     return buttons
 
 
-def playlist_markup(_, videoid, chat_id):
+def panel_markup_5(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -728,7 +725,7 @@ def playlist_markup(_, videoid, chat_id):
     return buttons
 
 
-def livestream_markup(_, videoid, chat_id):
+def panel_markup_3(_, videoid, chat_id):
     buttons = [
         [
             InlineKeyboardButton(
@@ -752,11 +749,11 @@ def livestream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐌𝐮𝐭𝐞",
+                text="๏ ᴍᴜᴛᴇ ๏",
                 callback_data=f"ADMIN Mute|{chat_id}",
             ),
             InlineKeyboardButton(
-                text="𝐔𝐧𝐦𝐮𝐭𝐞",
+                text="๏ ᴜɴᴍᴜᴛᴇ ๏",
                 callback_data=f"ADMIN Unmute|{chat_id}",
             ),
         ],
@@ -851,15 +848,15 @@ def panel_markup_clone(_, vidid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="𝐕𝐢𝐝𝐞𝐨", callback_data=f"downloadvideo {vidid}"
+                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {vidid}"
             ),
             InlineKeyboardButton(
-                text="𝐀𝐮𝐝𝐢𝐨", callback_data=f"downloadaudio {vidid}"
+                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {vidid}"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭", callback_data=f"vip_playlist {vidid}"
+                text="✚ ᴘʟᴀʏʟɪsᴛ ✚", callback_data=f"vip_playlist {vidid}"
             ),
         ],
     ]
