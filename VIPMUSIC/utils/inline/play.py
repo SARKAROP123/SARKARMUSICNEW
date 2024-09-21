@@ -374,7 +374,8 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text=_["ops"],
+                url=f"https://t.me/{app.username}?startgroup=true",
             ),
             InlineKeyboardButton(
                 text="ᴄᴏɴᴛʀᴏʟs ♻",
