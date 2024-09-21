@@ -34,6 +34,7 @@ from VIPMUSIC.utils.inline import (
     close_markup,
     panel_markup_1,
     panel_markup_2,
+    panel_markup_3,
     panel_markup_4,
     panel_markup_5,
     stream_markup,
