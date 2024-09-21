@@ -374,8 +374,7 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text=_["ops"],
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
                 text="ᴄᴏɴᴛʀᴏʟs ♻",
