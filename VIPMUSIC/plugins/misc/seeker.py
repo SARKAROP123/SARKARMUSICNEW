@@ -1,102 +1,42 @@
+#
+# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
+#
+# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
+# and is released under the MIT License.
+# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
+#
+# All rights reserved.
+#
 import asyncio
-import math
+import time
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardMarkup
 
+from config import MUTE_WARNING_TIME
 from strings import get_string
+from VIPMUSIC import app
+from VIPMUSIC.core.call import Yukki
 from VIPMUSIC.misc import db
-from VIPMUSIC.utils.database import get_active_chats, get_lang, is_music_playing
-from VIPMUSIC.utils.formatters import seconds_to_min, time_to_seconds
+from VIPMUSIC.utils.database import (
+    get_active_chats,
+    get_assistant,
+    get_lang,
+    is_music_playing,
+    set_loop,
+)
+from VIPMUSIC.utils.formatters import seconds_to_min
+from VIPMUSIC.utils.inline import stream_markup_timer, telegram_markup_timer
 
 from ..admins.callback import wrong
 
+autoend = {}
 checker = {}
+mute_warnings = {}
 
-# ==========================================================================#
-def stream_markup_timer(_, videoid, chat_id, played, dur):
-    played_sec = time_to_seconds(played)
-    duration_sec = time_to_seconds(dur)
-    percentage = (played_sec / duration_sec) * 100
-    umm = math.floor(percentage)
-    if 0 < umm <= 40:
-        bar = "◉——————————"
-    elif 10 < umm < 20:
-        bar = "—◉—————————"
-    elif 20 < umm < 30:
-        bar = "——◉————————"
-    elif 30 <= umm < 40:
-        bar = "———◉———————"
-    elif 40 <= umm < 50:
-        bar = "————◉——————"
-    elif 50 <= umm < 60:
-        bar = "——————◉————"
-    elif 50 <= umm < 70:
-        bar = "———————◉———"
-    else:
-        bar = "——————————◉"
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
-                callback_data="GetTimer",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["P_B_7"], callback_data=f"add_playlist {videoid}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close")],
-    ]
-    return buttons
-
-
-def telegram_markup_timer(_, chat_id, played, dur):
-    played_sec = time_to_seconds(played)
-    duration_sec = time_to_seconds(dur)
-    percentage = (played_sec / duration_sec) * 100
-    umm = math.floor(percentage)
-    if 0 < umm <= 40:
-        bar = "◉——————————"
-    elif 10 < umm < 20:
-        bar = "—◉—————————"
-    elif 20 < umm < 30:
-        bar = "——◉————————"
-    elif 30 <= umm < 40:
-        bar = "———◉———————"
-    elif 40 <= umm < 50:
-        bar = "————◉——————"
-    elif 50 <= umm < 60:
-        bar = "——————◉————"
-    elif 50 <= umm < 70:
-        bar = "———————◉———"
-    else:
-        bar = "——————————◉"
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
-                callback_data="GetTimer",
-            )
-        ],
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [
-            InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close"),
-        ],
-    ]
-    return buttons
-#==========================================================================#
+if MUTE_WARNING_TIME < 60:
+    t = f"{MUTE_WARNING_TIME} seconds"
+else:
+    t = time.strftime("%M:%S minutes", time.gmtime(MUTE_WARNING_TIME))
 
 
 async def timer():
@@ -120,10 +60,43 @@ async def timer():
 asyncio.create_task(timer())
 
 
+async def process_mute_warnings():
+    while True:
+        await asyncio.sleep(2)
+        for chat_id, details in list(mute_warnings.items()):
+            if time.time() - details["timestamp"] >= MUTE_WARNING_TIME:
+                _ = details["_"]
+                try:
+                    userbot = await get_assistant(chat_id)
+                    members = []
+                    async for member in userbot.get_call_members(chat_id):
+                        if member is None:
+                            continue
+                        members.append(member)
+
+                    autoend[chat_id] = len(members)
+                    m = next((m for m in members if m.chat.id == userbot.id), None)
+                    if m is None:
+                        continue
+                    is_muted = bool(m.is_muted and not m.can_self_unmute)
+
+                    if is_muted:
+                        await VIP.stop_stream(chat_id)
+                        await set_loop(chat_id, 0)
+                        await app.send_message(chat_id, _["admin_35"].format(t))
+
+                    mute_warnings.pop(chat_id, None)
+                except:
+                    mute_warnings.pop(chat_id, None)
+
+
 async def markup_timer():
-    while not await asyncio.sleep(120):
+    while not await asyncio.sleep(2):
         active_chats = await get_active_chats()
         for chat_id in active_chats:
+            if chat_id in mute_warnings:
+                continue
+
             try:
                 if not await is_music_playing(chat_id):
                     continue
@@ -149,6 +122,35 @@ async def markup_timer():
                     _ = get_string(language)
                 except:
                     _ = get_string("en")
+
+                try:
+                    userbot = await get_assistant(chat_id)
+                    members = []
+                    async for member in userbot.get_call_members(chat_id):
+                        if member is None:
+                            continue
+                        members.append(member)
+
+                    if not members:
+                        await VIP.stop_stream(chat_id)
+                        await set_loop(chat_id, 0)
+                        continue
+
+                    autoend[chat_id] = len(members)
+                    m = next((m for m in members if m.chat.id == userbot.id), None)
+                    if m is None:
+                        continue
+                    is_muted = bool(m.is_muted and not m.can_self_unmute)
+
+                    if is_muted:
+                        mute_warnings[chat_id] = {
+                            "timestamp": time.time(),
+                            "_": _,
+                        }
+
+                except:
+                    continue
+
                 try:
                     buttons = (
                         stream_markup_timer(
@@ -171,8 +173,10 @@ async def markup_timer():
                     )
                 except:
                     continue
+
             except:
                 continue
 
 
 asyncio.create_task(markup_timer())
+asyncio.create_task(process_mute_warnings())
