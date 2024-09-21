@@ -14,7 +14,7 @@ from config import (
     adminlist,
 )
 from VIPMUSIC import YouTube, app
-from VIPMUSIC.core.call import Yukki
+from VIPMUSIC.core.call import VIP as VIP
 from VIPMUSIC.misc import SUDOERS, db
 from VIPMUSIC.utils.database import (
     is_active_chat,
