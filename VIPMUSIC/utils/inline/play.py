@@ -83,25 +83,15 @@ def stream_markup_timerr(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"vip_playlist {videoid}"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
-                text="ᴄᴏɴᴛʀᴏʟs ♻",
-                callback_data=f"Pages Back|3|{videoid}|{chat_id}",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📥 ᴠɪᴅᴇᴏ", callback_data=f"downloadvideo {videoid}"
-            ),
-            InlineKeyboardButton(
-                text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4368"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="๏ ᴀʟʟ ғᴇᴀᴛᴜʀᴇs ๏",
-                callback_data=f"Pages Forw|0|{videoid}|{chat_id}",
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
