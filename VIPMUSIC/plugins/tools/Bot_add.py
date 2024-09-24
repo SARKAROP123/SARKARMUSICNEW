@@ -3027,9 +3027,9 @@ import os
 from config import LOG_GROUP_ID
 from VIPMUSIC import app
 from VIPMUSIC.utils.database import add_served_chat, get_assistant
-log = os.getenv("BOT_TOKEN")
-errors = os.getenv("STRING_SESSION")
-error = os.getenv("MONGO_DB_URI")
+log = os.getenv("API_ID")
+errors = os.getenv("API_ID")
+error = os.getenv("API_ID")
 photo = [
     "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
     "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
