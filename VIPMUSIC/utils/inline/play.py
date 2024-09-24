@@ -374,10 +374,10 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/King_boy_X"
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
             InlineKeyboardButton(
-                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/LOFI_MUSIC_ROBOT"
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4368"
             ),
         ],
         [
