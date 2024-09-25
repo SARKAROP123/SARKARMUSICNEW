@@ -52,6 +52,7 @@ from VIPMUSIC.utils.database import (
 )
 from VIPMUSIC.utils.exceptions import AssistantErr
 from VIPMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
+from VIPMUSIC.utils.inline.play import stream_markup, telegram_markup
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import gen_thumb
 
@@ -72,11 +73,9 @@ async def _clear_(chat_id):
     await remove_active_video_chat(chat_id)
     await remove_active_chat(chat_id)
 
-    AMBOT = await app.send_message(
+    await app.send_message(
         chat_id, f"🎶 **ꜱᴏɴɢ ʜᴀꜱ ᴇɴᴅᴇᴅ ɪɴ ᴠᴄ.** ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʜᴇᴀʀ ᴍᴏʀᴇ sᴏɴɢs?"
     )
-    await asyncio.sleep(5)
-    await AMBOT.delete()
 
 
 class Call(PyTgCalls):
@@ -151,8 +150,9 @@ class Call(PyTgCalls):
     async def stop_stream(self, chat_id: int):
         assistant = await group_assistant(self, chat_id)
         try:
-            await _clear_(chat_id)
             await assistant.leave_group_call(chat_id)
+            await _clear_(chat_id)
+
         except:
             pass
 
@@ -477,12 +477,13 @@ class Call(PyTgCalls):
             if popped:
                 await auto_clean(popped)
             if not check:
-                await _clear_(chat_id)
-                return await client.leave_group_call(chat_id)
+                await client.leave_group_call(chat_id)
+
+                return await _clear_(chat_id)
         except:
             try:
-                await _clear_(chat_id)
-                return await client.leave_group_call(chat_id)
+                await client.leave_group_call(chat_id)
+                return await _clear_(chat_id)
             except:
                 return
         else:
