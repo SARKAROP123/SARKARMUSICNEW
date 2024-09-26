@@ -174,47 +174,61 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
             await app.unban_chat_member(chat_id, userbot.id)
             await asyncio.sleep(10)
     except UserNotParticipant:
+        await VIP.st_stream(chat_id)
+        await set_loop(chat_id, 0)
+        await app.unban_chat_member(chat_id, userbot.id)
+        await asyncio.sleep(10)
         return
     except Exception as e:
         return
 
 
-@app.on_chat_member_updated(filters.group, group=6)
+@app.on_chat_member_updated(filters.group, group=-8)
 async def assistant_left(client: app, member: ChatMemberUpdated):
     chat_id = member.chat.id
-    userbot = await get_assistant(chat_id)
     try:
-        userbot = await get_assistant(member.chat.id)
-        get = await app.get_chat_member(chat_id, userbot.id)
-        if get.status in [ChatMemberStatus.LEFT]:
+        userbot = await get_assistant(chat_id)
+        userbot_id = userbot.id
 
-            # Assistant bot has been banned
-            remove_by = member.from_user.mention if member.from_user else "𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ"
-            chat_id = member.chat.id
-            title = member.chat.title
-            username = (
-                f"@{member.chat.username}" if member.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ"
+        # Check if the leaving member is the userbot
+        if (
+            not member.new_chat_member
+            and member.old_chat_member.user.id == userbot_id
+            and member.old_chat_member.status not in {"banned", "left", "restricted"}
+            and member.old_chat_member
+        ):
+            left_message = (
+                f"**Assistant Has Left This Chat**\n\n"
+                f"**Id:** `{userbot.id}`\n"
+                f"**Name:** @{userbot.username}\n\n"
+                f"**Invite Assistant By: /userbotjoin**"
             )
-
-            # Construct message
-            left_message = f"**Assistant Has Left This Chat**\n\n**Id:** `{userbot.id}`\n**Name:** @{userbot.username}\n\n**Invite Assistant By: /userbotjoin**"
-
-            # Create keyboard for unban button
-
-            # Send photo with the left message and keyboard
             await app.send_photo(
                 chat_id,
                 photo=random.choice(photo),
                 caption=left_message,
                 reply_markup=keyboard,
             )
-            # Perform actions like stopping streams or loops
+
             await VIP.st_stream(chat_id)
             await set_loop(chat_id, 0)
-
             await asyncio.sleep(10)
     except UserNotParticipant:
-        return
+        left_message = (
+            f"**Assistant Has Left This Chat**\n\n"
+            f"**Id:** `{userbot.id}`\n"
+            f"**Name:** @{userbot.username}\n\n"
+            f"**Invite Assistant By: /userbotjoin**"
+        )
+        await app.send_photo(
+            chat_id,
+            photo=random.choice(photo),
+            caption=left_message,
+            reply_markup=keyboard,
+        )
+        await VIP.st_stream(chat_id)
+        await set_loop(chat_id, 0)
+        await asyncio.sleep(10)
     except Exception as e:
         return
 
