@@ -39,12 +39,12 @@ def private_panel(_):
         [
             InlineKeyboardButton(
                 text="❍𝐌ᴏʀᴇ❍", 
-                url=config.SUPPORT_CHANNEL",
+                url=config.SUPPORT_CHANNEL"),
             )
         ],
         [
             InlineKeyboardButton(text="❍𝖲𝗎𝗉𝗉𝗈𝗋𝗍❍", url=config.SUPPORT_GROUP
-            )
+            ),
         ],
     ]
     return buttons
