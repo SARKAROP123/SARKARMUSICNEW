@@ -28,24 +28,24 @@ def private_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="❍𝐀𝙳𝙳 𝙼𝙴 𝙸𝙽 𝙽𝙴𝚆 𝙶𝚁𝙾𝚄𝙿𝚂❍",
+                text="❍ 𝐀ᴅᴅ 𝐌ᴇ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ ❍",
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
         [
             InlineKeyboardButton(
-                text="❍𝐒ҽƚƚιɳɠ𝐒❍", callback_data="settings_back_helper"),
+                text="❍ 𝐘ᴏᴜʀ 𝐇ᴇʟᴘᴇʀ ❍", callback_data="settings_back_helper"),
         ],
         [
             InlineKeyboardButton(
-                text="❍𝐀𝙳𝙳 𝙼𝙴 𝙸𝙽 𝙽𝙴𝚆 𝙶𝚁𝙾𝚄𝙿𝚂❍",
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="❍ 𝐀ʟʟ 𝐁ᴏᴛs ❍",
+                url=f"https://t.me/TG_NAME_STYLE/4368",
             )
         ],
         [
             InlineKeyboardButton(
-                text="❍𝐀𝙳𝙳 𝙼𝙴 𝙸𝙽 𝙽𝙴𝚆 𝙶𝚁𝙾𝚄𝙿𝚂❍",
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="❍ 𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 ❍",
+                url=f"https://t.me/TG_NAME_STYLE/4602",
             ),
         ],
     ]
