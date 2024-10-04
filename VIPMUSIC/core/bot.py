@@ -92,9 +92,9 @@ class VIPBot(Client):
             try:
                 await self.set_bot_commands(
                     commands=[
-                        BotCommand("start", "Start the bot"),
-                        BotCommand("help", "Get the help menu"),
-                        BotCommand("ping", "Check if the bot is alive or dead"),
+                        BotCommand("start", "❍ 𝐒ᴛᴀʀᴛ 𝐓ʜᴇ 𝐁ᴏᴛ ❍"),
+                        BotCommand("help", "❍ 𝐆ᴇᴛ 𝐇ᴇʟᴘ 𝐌ᴇɴᴜ ❍"),
+                        BotCommand("ping", "❍ 𝐂ʜᴇᴄᴋ 𝐓ʜᴇ 𝐁ᴏᴛ 𝐀ʟɪᴠᴇ 𝐎ʀ 𝐃ᴇᴀᴅ ❍"),
                     ],
                     scope=BotCommandScopeAllPrivateChats(),
                 )
