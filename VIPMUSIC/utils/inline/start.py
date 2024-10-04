@@ -38,8 +38,8 @@ def private_panel(_):
         ],
         [
              InlineKeyboardButton(
-                text="❍ 𝐀ʟʟ 𝐁ᴏᴛs ❍",
-                url=f"https://t.me/TG_NAME_STYLE/4368",
+                text="❍ 𝐎ᴡɴᴇʀ ❍",
+                url=f"https://t.me/ll_SARKAR_MERA_BABU_ll",
             ),
             InlineKeyboardButton(
                 text="❍ 𝐀ʟʟ 𝐁ᴏᴛs ❍",
