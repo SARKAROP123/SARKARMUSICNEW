@@ -38,10 +38,14 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(
-                text="❍𝐌ᴏʀᴇ❍", url=config.SUPPORT_CHANNEL"),
+                text="❍𝐀𝙳𝙳 𝙼𝙴 𝙸𝙽 𝙽𝙴𝚆 𝙶𝚁𝙾𝚄𝙿𝚂❍",
+                url=f"https://t.me/{app.username}?startgroup=true",
+            )
         ],
         [
-            InlineKeyboardButton(text="❍𝖲𝗎𝗉𝗉𝗈𝗋𝗍❍", url=config.SUPPORT_GROUP"
+            InlineKeyboardButton(
+                text="❍𝐀𝙳𝙳 𝙼𝙴 𝙸𝙽 𝙽𝙴𝚆 𝙶𝚁𝙾𝚄𝙿𝚂❍",
+                url=f"https://t.me/{app.username}?startgroup=true",
             ),
         ],
     ]
