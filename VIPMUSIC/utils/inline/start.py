@@ -35,6 +35,12 @@ def private_panel(_):
         [
             InlineKeyboardButton(
                 text="❍ 𝐘ᴏᴜʀ 𝐇ᴇʟᴘᴇʀ ❍", callback_data="settings_back_helper"),
+        ]
+        [
+             InlineKeyboardButton(
+                text="❍ 𝐀ʟʟ 𝐁ᴏᴛs ❍",
+                url=f"https://t.me/TG_NAME_STYLE/4368",
+            )
         ],
         [
             InlineKeyboardButton(
@@ -62,3 +68,4 @@ def alive_panel(_):
         ],
     ]
     return buttons
+                 
