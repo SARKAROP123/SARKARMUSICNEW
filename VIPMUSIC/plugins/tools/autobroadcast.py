@@ -9,7 +9,7 @@ from VIPMUSIC.utils.database import get_served_chats
 # Convert AUTO_GCAST to boolean based on "On" or "Off"
 AUTO_GCASTS = AUTO_GCAST.strip().lower() == "on"
 
-START_IMG_URLS = "https://envs.sh/I0U.jpg"
+START_IMG_URLS = "https://telegra.ph/file/a494ac7666704a51d6448.png"
 
 MESSAGE = f"""**𝐏ᴀɪᴅ 𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ 𝐕ɪᴀ 𝐌ᴜsɪᴄ 𝐁ᴏᴛs
 
