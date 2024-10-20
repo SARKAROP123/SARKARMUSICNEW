@@ -92,7 +92,7 @@ from VIPMUSIC import app
 @app.on_message(filters.video_chat_started)
 async def brah(_, msg):
     chat_id = msg.chat.id
-    await msg.reply("**😍ᴠɪᴅᴇᴏ ᴄʜᴀᴛ sᴛᴀʀᴛᴇᴅ🥳**")
+    await msg.reply("**⌯ ◉ 𝗩𝗖 𝗦𝗧𝗔𝗥𝗧𝗘𝗗 ◉ ⌯**")
     await VIP.st_stream(chat_id)
     await set_loop(chat_id, 0)
 
@@ -101,7 +101,7 @@ async def brah(_, msg):
 @app.on_message(filters.video_chat_ended)
 async def brah2(_, msg):
     chat_id = msg.chat.id
-    await msg.reply("**😕ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ💔**")
+    await msg.reply("**⌯ ◉ 𝗩𝗖 𝗘𝗡𝗗𝗘𝗗 ◉ ⌯**")
     await VIP.st_stream(chat_id)
     await set_loop(chat_id, 0)
 """
