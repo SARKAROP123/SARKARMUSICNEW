@@ -84,7 +84,7 @@ class temp:
 
 
 
-def circle(pfp, size=(500, 500), brightness_factor=10):
+def circle(pfp, size=(900, 900), brightness_factor=10):
     pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
     pfp = ImageEnhance.Brightness(pfp).enhance(brightness_factor)
     bigsize = (pfp.size[0] * 3, pfp.size[1] * 3)
@@ -179,14 +179,14 @@ async def greet_new_member(_, member: ChatMemberUpdated):
                 member.chat.id,
                 photo=welcomeimg,
                 caption=f"""
-╔═.✵.════════════════╗
+╔═.✵.════════════════════╗
 ║❍ 𝐍ᴀᴍᴇ ➥  {user.mention}
 ║❍ 𝐔sᴇʀɴᴀᴍᴇ ➥  @{user.username}
 ║❍ 𝐔sᴇʀ 𝐈ᴅ ➥  {user.id}
 ║
 ║
 ║❖ 𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ ➥ ๛[❤️‍🔥 • 𝛚𝛐𝛚 • ❤️‍🔥](https://t.me/ll_SARKAR_MERA_BABU_ll)
-╚════════════════.✵.═╝
+╚════════════════════.✵.═╝
 """,
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton(button_text, url=deep_link)],
