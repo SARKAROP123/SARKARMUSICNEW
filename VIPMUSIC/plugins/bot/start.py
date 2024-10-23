@@ -236,10 +236,8 @@ async def start_comm(client, message: Message, _):
         await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ")
         await asyncio.sleep(0.1)
         await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ ")
-        await asyncio.sleep(0.2)
-        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛")
         await asyncio.sleep(0.1)
-        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲")
+        await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐘")
         await asyncio.sleep(0.1)
         await vips.edit_text("𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 ꨄ︎ 𝐁𝐚𝐛𝐲📍.")
         await asyncio.sleep(0.1)
@@ -248,7 +246,7 @@ async def start_comm(client, message: Message, _):
         await vips.delete()
 
         done = await message.reply_text("❤️‍🔥")
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.1)
         await done.delete()
         await message.reply_photo(
             photo=config.START_IMG_URL,
