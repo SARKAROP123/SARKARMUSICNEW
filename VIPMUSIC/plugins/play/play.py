@@ -18,8 +18,8 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS, lyrical
-from VIPMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from config import BANNED_USERS, LOG_GROUP_ID, OWNER_ID, lyrical
+from VIPMUSIC import LOGGER, Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from VIPMUSIC.core.call import VIP
 from VIPMUSIC.utils import seconds_to_min, time_to_seconds
 from VIPMUSIC.utils.channelplay import get_channeplayCB
@@ -142,6 +142,7 @@ async def play_commnd(
             except Exception as e:
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+                LOGGER(__name__).error(f"{ex_type} {e}")
                 return await mystic.edit_text(err)
             return await mystic.delete()
         return
@@ -188,6 +189,7 @@ async def play_commnd(
             except Exception as e:
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+                LOGGER(__name__).error(f"{ex_type} {e}")
                 return await mystic.edit_text(err)
             return await mystic.delete()
         return
@@ -297,7 +299,16 @@ async def play_commnd(
                 cap = _["play_13"].format(message.from_user.first_name)
                 img = url
             else:
-                return await mystic.edit_text(_["play_16"])
+                await mystic.delete()
+                await app.send_message(
+                    LOG_GROUP_ID,
+                    f"**ʜᴇʏ [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID[0]}) ᴍᴀʏ ʙᴇ ᴍʏ ᴄᴏᴏᴋɪᴇs ʜᴀs ʙᴇᴇɴ ᴅᴇᴀᴅ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ᴏɴᴇ ᴛɪᴍᴇ ʙʏ ᴘʟᴀʏ ᴀɴʏ sᴏɴɢs**",
+                )
+                return await app.send_message(
+                    OWNER_ID[0],
+                    f"**ʜᴇʏ [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID[0]}) ᴍᴀʏ ʙᴇ ᴍʏ ᴄᴏᴏᴋɪᴇs ʜᴀs ʙᴇᴇɴ ᴅᴇᴀᴅ ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ᴏɴᴇ ᴛɪᴍᴇ ʙʏ ᴘʟᴀʏ ᴀɴʏ sᴏɴɢs**",
+                )
+
         elif await Resso.valid(url):
             try:
                 details, track_id = await Resso.track(url)
@@ -334,6 +345,7 @@ async def play_commnd(
             except Exception as e:
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+                LOGGER(__name__).error(f"{ex_type} {e}")
                 return await mystic.edit_text(err)
             return await mystic.delete()
         else:
@@ -370,6 +382,7 @@ async def play_commnd(
             except Exception as e:
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+                LOGGER(__name__).error(f"{ex_type} {e}")
                 return await mystic.edit_text(err)
             return await play_logs(message, streamtype="M3u8 or Index Link")
     else:
@@ -429,6 +442,7 @@ async def play_commnd(
         except Exception as e:
             ex_type = type(e).__name__
             err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+            LOGGER(__name__).error(f"{ex_type} {e}")
             try:
                 return await mystic.edit_text(err)
             except FloodWait as e:
@@ -559,6 +573,7 @@ async def play_music(client, CallbackQuery, _):
     except Exception as e:
         ex_type = type(e).__name__
         err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
+        LOGGER(__name__).error(f"{ex_type} {e}")
         return await mystic.edit_text(err)
     return await mystic.delete()
 
