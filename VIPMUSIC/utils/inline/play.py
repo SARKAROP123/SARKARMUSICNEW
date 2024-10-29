@@ -540,30 +540,18 @@ def queue_markup(_, videoid, chat_id):
             InlineKeyboardButton(
                 text=_["S_B_5"],
                 url=f"https://t.me/{app.username}?startgroup=true",
+        ],
+        [
+            InlineKeyboardButton(
+                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+            ),
+            InlineKeyboardButton(
+                text="❰𝐀𝐋𝐋 𝐁𝐎𝐓𝐒❱", url="https://t.me/TG_NAME_STYLE/4368"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="II ᴘᴀᴜsᴇ",
-                callback_data=f"ADMIN Pause|{chat_id}",
-            ),
-            InlineKeyboardButton(text="▢ sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-            InlineKeyboardButton(
-                text="sᴋɪᴘ ‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="▷ ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"
-            ),
-            InlineKeyboardButton(
-                text="ʀᴇᴘʟᴀʏ ↺", callback_data=f"ADMIN Replay|{chat_id}"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏",
-                callback_data=f"PanelMarkup None|{chat_id}",
+                text="❰𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄❱", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
