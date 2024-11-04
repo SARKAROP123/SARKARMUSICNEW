@@ -9,16 +9,14 @@ from VIPMUSIC.utils.database import get_served_chats
 # Convert AUTO_GCAST to boolean based on "On" or "Off"
 AUTO_GCASTS = AUTO_GCAST.strip().lower() == "on"
 
-START_IMG_URLS = "https://graph.org/file/6b5fbd212930d53b586ef-b2b5a55674c7246b6d.jpg"
+START_IMG_URLS = "https://graph.org/file/099a1a58e21a817bd163b-1f4320a432bf0724c2.jpg"
 
-MESSAGE = f"""**𝐏ᴀɪᴅ 𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ 𝐕ɪᴀ 𝐌ᴜsɪᴄ 𝐁ᴏᴛs
+MESSAGE = f"""๏꯭ P꯭ᴀɪ꯭ᴅ꯭ P꯭ʀ꯭ᴏ꯭ᴍ꯭ᴏ꯭ᴛ꯭ɪ꯭ᴏɴ꯭s꯭꯭ ꯭ᴀᴠ꯭ᴀɪ꯭ʟᴀ꯭ʙ꯭ʟ꯭ᴇ 
 
-[𝐂ʜᴀᴛᴛɴɢ 𝐆ʀᴏᴜᴘs 𝐂ᴏʟᴏʀ 𝐓ʀᴀᴅɪɴɢ 𝐆ᴀᴍᴇs, 𝐂ʜᴀɴɴᴇʟs, 𝐁ᴇᴛᴛɪɴɢ, 𝐀ᴅs 𝐀ɴʏᴛʜɪɴɢ]
+➻ Pʀᴏᴍᴏᴛᴇ ᴄʜᴀᴛᴛɪɴɢ ɢʀᴏᴜᴘs, ᴄᴏʟᴏᴜʀ ᴛʀᴀᴅɪɴɢ ɢᴀᴍᴇs, ᴄʜᴀɴɴᴇʟs, ʙᴇᴛᴛɪɴɢ ᴀᴅs ᴏʀ ᴀɴʏᴛʜɪɴɢ. 
+๏ ᴅᴀɪʟʏ , ᴡᴇᴇᴋʟʏ , ᴍᴏɴᴛʜʟʏ ᴘʟᴀɴs ᴀᴠᴀɪʟᴀʙʟᴇ. 
 
-𝐏ʀᴏᴍᴏᴛᴇ 𝐀ɴʏᴛʜɪɴɢ 𝐘ᴏᴜ 𝐖ᴀɴᴛ 𝐎ɴ 𝐎ᴜʀ 𝐏ʟᴀᴛғᴏʀᴍ 𝐖ɪᴛʜ 𝐁ᴇsᴛ 𝐑ᴇsᴜʟᴛs.
-𝐃ᴀɪʟʏ, 𝐖ᴇᴇᴋʟʏ, 𝐌ᴏɴᴛʜʟʏ, 𝐏ʟᴀɴs 𝐀ᴠɪᴀɪʟᴀʙʟᴇ.
-
-𝐃ᴍ @ll_SARKAR_MERA_BABU_ll"""
+➻ ᴄᴏɴᴛᴀᴄᴛ ᴅᴇᴛᴀɪʟꜱ: @ll_SARKAR_MERA_BABU_ll"""
 
 BUTTON = InlineKeyboardMarkup(
     [
