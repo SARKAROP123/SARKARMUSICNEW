@@ -16,7 +16,7 @@ MESSAGE = f"""๏꯭ P꯭ᴀɪ꯭ᴅ꯭ P꯭ʀ꯭ᴏ꯭ᴍ꯭ᴏ꯭ᴛ꯭ɪ꯭�
 ➻ Pʀᴏᴍᴏᴛᴇ ᴄʜᴀᴛᴛɪɴɢ ɢʀᴏᴜᴘs, ᴄᴏʟᴏᴜʀ ᴛʀᴀᴅɪɴɢ ɢᴀᴍᴇs, ᴄʜᴀɴɴᴇʟs, ʙᴇᴛᴛɪɴɢ ᴀᴅs ᴏʀ ᴀɴʏᴛʜɪɴɢ. 
 ๏ ᴅᴀɪʟʏ , ᴡᴇᴇᴋʟʏ , ᴍᴏɴᴛʜʟʏ ᴘʟᴀɴs ᴀᴠᴀɪʟᴀʙʟᴇ. 
 
-➻ᴄᴏɴᴛᴀᴄᴛ: @ll_SARKAR_MERA_BABU_ll"""
+➻𝐃𝐌 @ll_SARKAR_MERA_BABU_ll"""
 
 BUTTON = InlineKeyboardMarkup(
     [
