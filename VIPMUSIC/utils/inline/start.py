@@ -30,26 +30,34 @@ def private_panel(_):
             InlineKeyboardButton(
                 text="❍ 𝐀ᴅᴅ 𝐌ᴇ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ ❍",
                 url=f"https://t.me/{app.username}?startgroup=true",
-            )
+            ),
         ],
         [
             InlineKeyboardButton(
-                text="❍ 𝐘ᴏᴜʀ 𝐇ᴇʟᴘᴇʀ ❍", callback_data="settings_back_helper"),
+                text="❍ 𝐘ᴏᴜʀ 𝐇ᴇʟᴘᴇʀ ❍",
+                callback_data="settings_back_helper",
+            ),
         ],
         [
-             InlineKeyboardButton(
+            InlineKeyboardButton(
                 text="❍ 𝐎ᴡɴᴇʀ ❍",
                 url=f"https://t.me/ll_SARKAR_MERA_BABU_ll",
             ),
             InlineKeyboardButton(
                 text="❍ 𝐀ʟʟ 𝐁ᴏᴛs ❍",
                 url=f"https://t.me/TG_NAME_STYLE/4368",
-            )
+            ),
         ],
         [
             InlineKeyboardButton(
                 text="❍ 𝐏𝐑𝐎𝐌𝐎𝐓𝐈𝐎𝐍 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 ❍",
                 url=f"https://t.me/TG_NAME_STYLE/4602",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="❍ 𝐌𝐀𝐍𝐀𝐆𝐄𝐌𝐄𝐍𝐓 ❍",
+                url=f"(link unavailable)",
             ),
         ],
     ]
