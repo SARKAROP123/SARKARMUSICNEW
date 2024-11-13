@@ -57,7 +57,7 @@ def private_panel(_):
         [
             InlineKeyboardButton(
                 text="❍ 𝐌𝐀𝐍𝐀𝐆𝐄𝐌𝐄𝐍𝐓 ❍",
-                url=f"(link unavailable)",
+                url=f"help_back",
             ),
         ],
     ]
